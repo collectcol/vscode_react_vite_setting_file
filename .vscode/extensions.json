@@ -1,0 +1,41 @@
+{
+  "recommendations": [
+    // ========== 필수 개발 도구 ==========
+    "dbaeumer.vscode-eslint",              // ESLint - JavaScript 코드 품질 검사
+    "esbenp.prettier-vscode",               // Prettier - 코드 포맷터
+    "anthropic.claude-code",                // Claude Code - AI 코딩 도우미
+    
+    // ========== Git 관련 ==========
+    "donjayamanne.githistory",              // Git History - Git 히스토리 보기
+    "eamodio.gitlens",                      // GitLens - Git 고급 기능
+    
+    // ========== HTML/JSX 자동 완성 ==========
+    "formulahendry.auto-close-tag",         // 태그 자동 닫기
+    "formulahendry.auto-rename-tag",        // 태그 이름 자동 변경
+    "vincaslt.highlight-matching-tag",      // 매칭되는 태그 하이라이트
+    
+    // ========== 코드 가독성 향상 ==========
+    "oderwat.indent-rainbow",               // 들여쓰기 레벨별 색상
+    "naumovs.color-highlight",              // 색상 코드 미리보기
+    "usernamehw.errorlens",                 // 에러 메시지 인라인 표시
+    "kisstkondoros.vscode-gutter-preview",  // 이미지 경로 미리보기
+    
+    // ========== JavaScript/React 개발 ==========
+    "xabikos.javascriptsnippets",           // JavaScript 코드 스니펫
+    "chamboug.js-auto-backticks",           // 자동 백틱 변환
+    "pranaygp.vscode-css-peek",             // CSS 정의 미리보기
+    
+    // ========== 기타 유틸리티 ==========
+    "pkief.material-icon-theme",            // Material 아이콘 테마
+    "robertostermann.inline-parameters-extended", // 확장된 파라미터 힌트
+    
+    // ========== Python 개발 (선택) ==========
+    "ms-python.python",                     // Python 기본 지원
+    "ms-python.vscode-pylance",             // Python 언어 서버
+    "ms-python.debugpy",                    // Python 디버거
+    "ms-python.vscode-python-envs",         // Python 가상환경 관리
+
+    // ========== 언어 팩 ==========
+    "ms-ceintl.vscode-language-pack-ko"     // 한국어 언어 팩
+  ]
+}

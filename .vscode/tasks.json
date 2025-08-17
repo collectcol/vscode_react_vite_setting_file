@@ -1,0 +1,90 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev: 개발 서버 실행 (자동 감지)",
+      "type": "npm",
+      "script": "dev",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "현재 환경에 맞는 기본 개발 서버 실행"
+    },
+    {
+      "label": "dev: WSL 개발 서버",
+      "type": "npm",
+      "script": "dev:wsl",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "detail": "WSL 환경용 개발 서버 (파일 변경 감지 polling 활성화)"
+    },
+    {
+      "label": "dev: Windows 개발 서버",
+      "type": "npm",
+      "script": "dev:windows",
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "detail": "Windows 환경용 개발 서버 (polling 비활성화)"
+    },
+    {
+      "label": "build: 프로덕션 빌드",
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "프로덕션용 빌드 실행"
+    },
+    {
+      "label": "lint: 코드 검사",
+      "type": "npm",
+      "script": "lint",
+      "group": "test",
+      "problemMatcher": ["$eslint-stylish"],
+      "detail": "ESLint로 코드 품질 검사"
+    },
+    {
+      "label": "preview: 빌드 미리보기",
+      "type": "npm",
+      "script": "preview",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "빌드된 결과물 미리보기"
+    },
+    {
+      "label": "환경 자동 감지 개발 서버",
+      "type": "shell",
+      "command": "if [ -n \"$WSL_DISTRO_NAME\" ]; then npm run dev:wsl; else npm run dev:windows; fi",
+      "windows": {
+        "command": "npm run dev:windows"
+      },
+      "linux": {
+        "command": "npm run dev:wsl"
+      },
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "detail": "OS를 자동으로 감지하여 적절한 개발 서버 실행"
+    }
+  ]
+}
