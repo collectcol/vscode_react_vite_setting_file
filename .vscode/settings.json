@@ -2,16 +2,16 @@
   // ========== 공통 설정 (모든 JavaScript/TypeScript 프로젝트) ==========
   // 자동 import 제안
   "javascript.suggest.autoImports": true,
-  
+
   // 파일 이동 시 import 경로 자동 업데이트
   "javascript.updateImportsOnFileMove.enabled": "always",
-  
+
   // 저장 시 import 구문 자동 정리
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
+    "source.organizeImports": "never", // 사용하지 않는 import 자동 제거 비활성화 // 활성화 하고 싶으면 "explicit" 으로 수정
     "source.fixAll.eslint": "explicit"
   },
-  
+
   // 코드 자동 완성 관련 설정
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.quickSuggestions": {
@@ -20,22 +20,22 @@
     "strings": true
   },
   "editor.wordBasedSuggestions": "matchingDocuments",
-  
+
   // import 시 상대 경로 사용
   "javascript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifier": "relative",
-  
+
   // ========== React 프로젝트 전용 설정 ==========
   // JSX 파일에서 Emmet 사용 가능
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  
+
   // Tab 키로 Emmet 약어 확장
   "emmet.triggerExpansionOnTab": true,
-  
+
   // ========== 확장 프로그램 설정 ==========
-  
+
   // ESLint 설정
   "eslint.enable": true,
   "eslint.validate": [
@@ -45,7 +45,7 @@
     "typescriptreact"
   ],
   "eslint.format.enable": true,
-  
+
   // Prettier 설정
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -57,7 +57,7 @@
   "prettier.bracketSpacing": true,
   "prettier.arrowParens": "always",
   "prettier.endOfLine": "auto",
-  
+
   // Auto Close/Rename Tag 설정
   "auto-close-tag.enableAutoCloseTag": true,
   "auto-close-tag.enableAutoCloseSelfClosingTag": true,
@@ -69,20 +69,20 @@
     "typescript",
     "typescriptreact"
   ],
-  
+
   // Error Lens 설정
   "errorLens.enabled": true,
   "errorLens.fontSize": "12",
   "errorLens.margin": "20px",
   "errorLens.delay": 0,
   "errorLens.followCursor": "closestProblem",
-  
+
   // GitLens 설정
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.enabled": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": true,
-  
+
   // Indent Rainbow 설정
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
@@ -92,18 +92,18 @@
     "rgba(255,127,255,0.07)",
     "rgba(79,236,236,0.07)"
   ],
-  
+
   // Inline Parameters 설정
   "inline-parameters.enabled": true,
   "inline-parameters.leadingCharacters": "...",
   "inline-parameters.trailingCharacters": "",
   "inline-parameters.showPhantomHints": true,
-  
+
   // Material Icon Theme 설정
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.activeIconPack": "react",
-  
+
   // Highlight Matching Tag 설정
   "highlight-matching-tag.styles": {
     "opening": {
@@ -123,14 +123,14 @@
       }
     }
   },
-  
+
   // ========== 터미널 및 작업 설정 ==========
   // 기본 빌드 작업 자동 실행 설정
   "task.autoDetect": "on",
-  
+
   // 터미널에서 npm 스크립트 자동 감지
   "npm.autoDetect": "on",
-  
+
   // 기본 터미널 프로필 (환경별 자동 선택)
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.defaultProfile.linux": "bash"

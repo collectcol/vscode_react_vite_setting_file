@@ -2,6 +2,32 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "install: 패키지 설치",
+      "type": "shell",
+      "command": "npm install",
+      "group": "none",
+      "problemMatcher": [],
+      "detail": "node_modules 설치",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "install: cross-env 확인 및 설치",
+      "type": "shell",
+      "command": "npm install --save-dev cross-env",
+      "group": "none",
+      "problemMatcher": [],
+      "detail": "cross-env 패키지 설치",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared",
+        "showReuseMessage": false
+      }
+    },
+    {
       "label": "dev: 개발 서버 실행 (자동 감지)",
       "type": "npm",
       "script": "dev",
@@ -65,14 +91,19 @@
       "detail": "빌드된 결과물 미리보기"
     },
     {
-      "label": "환경 자동 감지 개발 서버",
+      "label": "환경 자동 감지 개발 서버 (PowerShell)",
       "type": "shell",
-      "command": "if [ -n \"$WSL_DISTRO_NAME\" ]; then npm run dev:wsl; else npm run dev:windows; fi",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev:windows"
+      ],
       "windows": {
-        "command": "npm run dev:windows"
-      },
-      "linux": {
-        "command": "npm run dev:wsl"
+        "command": "npm",
+        "args": [
+          "run", 
+          "dev:windows"
+        ]
       },
       "group": "build",
       "problemMatcher": [],
@@ -84,7 +115,53 @@
         "showReuseMessage": false,
         "clear": true
       },
-      "detail": "OS를 자동으로 감지하여 적절한 개발 서버 실행"
+      "detail": "PowerShell을 사용하여 OS를 자동으로 감지하고 적절한 개발 서버 실행",
+      "dependsOrder": "sequence",
+      "dependsOn": ["install: 패키지 설치", "install: cross-env 확인 및 설치"]
+    },
+    {
+      "label": "환경 자동 감지 개발 서버 (Bash)",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "detail": "Bash를 사용하여 OS를 자동으로 감지하고 적절한 개발 서버 실행",
+      "dependsOrder": "sequence",
+      "dependsOn": ["install: 패키지 설치", "install: cross-env 확인 및 설치"]
+    },
+    {
+      "label": "환경 자동 감지 개발 서버 (Node.js)",
+      "type": "shell",
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "detail": "Node.js를 사용하여 크로스 플랫폼 환경 감지 및 개발 서버 실행",
+      "dependsOrder": "sequence",
+      "dependsOn": ["install: 패키지 설치", "install: cross-env 확인 및 설치"]
     }
   ]
 }
